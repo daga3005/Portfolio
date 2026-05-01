@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Digital Ecosystem",
+    "description": "Sitio Web sobre el Ecosistema Digital en la Formación Continua de Docentes",
+    "link": "https://digital-ecosystem.vercel.app/",
+    "github": "https://github.com/daga3005/digital-ecosystem",
+    "image": "/projects/dig-eco.png",
+    "tags": ["NEXT", "TAILWIND"]
+  },
+  {
+    "title": "World Explorer 🌍",
+    "description": "Aplicación profesional construida con React + TypeScript + TailwindCSS que permite explorar información de todos los países del mundo usando la API de REST Countries.",
+    "image": "/projects/adventjs.webp",
+    "github": "https://github.com/daga3005/World-Explorer",
+    "tags": ["NEXT", "TAILWIND", "TYPESCRIPT"]
+  },
+  {
+    "title": "AdventJS - Retos de programación con JavaScript y TypeScript",
+    "description": "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+    "link": "https://adventjs.dev",
+    "image": "/projects/adventjs.webp",
+    "tags": ["NODE", "EXPRESS"]
+  }
+]

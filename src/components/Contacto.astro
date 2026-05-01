@@ -1,0 +1,42 @@
+---
+// Contact.astro
+import CV from '../components/icons/CV.astro' 
+
+const email = "garcdanielalejandro@gmail.com"; 
+const cv= 'CV'
+
+---
+
+<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
+  <div class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1">
+    
+
+    <div class="flex flex-col gap-3 mt-6">
+      <!-- Email -->
+      <span 
+        
+        class="inline-flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors bg-black/5 dark:bg-white/10 rounded-xl hover:bg-yellow-500/20 dark:hover:bg-yellow-500/20 hover:text-yellow-600 dark:hover:text-yellow-400 group"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        <span class="flex-1">{email}</span>
+       
+      </span>
+       <!-- CV -->
+      <a
+        href="/v"
+        class="inline-flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors bg-black/5 dark:bg-white/10 rounded-xl hover:bg-yellow-500/20 dark:hover:bg-yellow-500/20 hover:text-yellow-600 dark:hover:text-yellow-400 group"
+      >
+        <CV class="w-6 h-6 text-yellow-500"/>
+        <span class="flex-1">{cv}</span>
+       
+      </a>
+      
+     
+    </div>
+  </div>
+
+</article>
+
+
