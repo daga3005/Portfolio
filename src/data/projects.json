@@ -24,7 +24,7 @@
   },
   {
     "title": " Books-Rest-API",
-    "description": "Una API REST construida con **Node.js** y **Express** que implementa autenticación mediante **JWT** y manejo de sesiones con cookies. El proyecto usa **PostgreSQL** como base de datos y **EJS** como motor de plantillas.",
+    "description": "Una API REST construida con Node.js y Express que implementa autenticación mediante JWT y manejo de sesiones con cookies. El proyecto usa PostgreSQL como base de datos y EJS como motor de plantillas.",
     "github": "https://github.com/daga3005/Books-Auth-Rest-API",
     "image": "/projects/four.png",
     
