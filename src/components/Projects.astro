@@ -8,6 +8,11 @@ import Typescript from "./icons/Typescript.astro"
 import ExternalLink from "./icons/ExternalLink.astro"
 import LinkButton from "./LinkButton.astro"
 import projectsData from "../data/projects.json"
+import ChakraUi from "./icons/ChakraUi.astro"
+import React from "./icons/React.astro"
+import PostgreSQL from "./icons/PostgreSQL.astro"
+import MySQL from "./icons/MySQL.astro"
+
 
 
 const TAGS: Record<string, { name: string; class: string; icon: any }> = {
@@ -36,6 +41,26 @@ const TAGS: Record<string, { name: string; class: string; icon: any }> = {
     class: "bg-[#003159] text-white",
     icon: ExpressJS,
   },
+   REACT: {
+    name: "React JS",
+    class: "bg-[#003159] text-white",
+    icon: React,
+  },
+   CHAKRA: {
+    name: "Chakra Ui",
+    class: "bg-[#003159] text-white",
+    icon: ChakraUi,
+  },
+  POSTGRES:{
+    name: "PostgreSQL",
+    class: "bg-[#003159] text-white",
+    icon: PostgreSQL,
+  },
+  MYSQL:{
+    name: "MySQL",
+    class: "bg-[#003159] text-white",
+    icon: MySQL,
+  }
 }
 
 const PROJECTS = projectsData.map((project) => ({

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Astro Starter Kit: Basics
 
 ```sh
@@ -44,3 +45,22 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+=======
+# Portfolio - Daniel Alejandro (Daga)
+
+![Astro](https://img.shields.io/badge/Astro-0C1222?style=for-the-badge&logo=astro&logoColor=F5F5F5)
+
+
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+Portafolio profesional de **Daniel Alejandro (Daga)** - Ingeniero en Telecomunicaciones y Electrónica especializado en desarrollo full-stack web.
+
+## 🚀 Tecnologías utilizadas
+
+- **Framework:** Astro 6.2.1
+- **UI:** Tailwind CSS
+- **Iconos:** Tabler Icons
+- **Despliegue:** Netlify
+
+
+>>>>>>> f80883e3782cc8efa990df6aa47547f6a0e9bd92

@@ -10,15 +10,32 @@
   {
     "title": "World Explorer 🌍",
     "description": "Aplicación profesional construida con React + TypeScript + TailwindCSS que permite explorar información de todos los países del mundo usando la API de REST Countries.",
-    "image": "/projects/adventjs.webp",
+    "image": "/projects/world-country.webp",
     "github": "https://github.com/daga3005/World-Explorer",
-    "tags": ["NEXT", "TAILWIND", "TYPESCRIPT"]
+    "tags": ["REACT", "TAILWIND", "TYPESCRIPT"]
   },
   {
-    "title": "AdventJS - Retos de programación con JavaScript y TypeScript",
-    "description": "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    "link": "https://adventjs.dev",
-    "image": "/projects/adventjs.webp",
-    "tags": ["NODE", "EXPRESS"]
+    "title": "🖼️ MAC Museum",
+    "description": "Sitio web interactivo inspirado en un Museo de Arte Contemporáneo, diseñado para ofrecer una experiencia visual dinámica utilizando GSAP y Chakra UI.",
+    "github": "https://github.com/daga3005/MAC-Museum",
+    "image": "/projects/museo.png",
+    
+    "tags": ["REACT","TYPESCRIPT","CHAKRA"]
+  },
+  {
+    "title": " Books-Rest-API",
+    "description": "Una API REST construida con **Node.js** y **Express** que implementa autenticación mediante **JWT** y manejo de sesiones con cookies. El proyecto usa **PostgreSQL** como base de datos y **EJS** como motor de plantillas.",
+    "github": "https://github.com/daga3005/Books-Auth-Rest-API",
+    "image": "/projects/four.png",
+    
+    "tags": ["NODE","EXPRESS","POSTGRES"]
+  },
+  {
+    "title": "🎬 Movies REST API",
+    "description": "API RESTful para gestión de películas construida con Node.js y Express. Soporta dos modos de almacenamiento: archivo local (JSON) o base de datos MySQL.",
+    "github": "https://github.com/daga3005/movies-rest-api",
+    "image": "/projects/movies-rest.jpg",
+    
+    "tags": ["NODE","EXPRESS","MYSQL"]
   }
 ]
