@@ -1,27 +1,91 @@
 ---
 import HeartFilled from "./icons/HeartFilled.astro"
+import GitHub from "./icons/GitHub.astro"
+import LinkedInIcon from "./icons/LinkedIn.astro"
+import MailIcon from "./icons/Mail.astro"
+
 const currentYear = new Date().getFullYear()
 ---
 
-<footer
-  class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
->
-  <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
-  >
-    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90 inline-flex items-center gap-1"
-      >&copy; {currentYear}
-      <a href="https://www.linkedin.com/in/daniel-alejandro-garc%C3%ADa-p%C3%A9rez-9187a7288" class="hover:underline">Daga</a>. Hecho con <HeartFilled class="size-3.5 text-red-500 inline" aria-label="amor" /> Casi
-      todos los derechos reservados
-    </span>
-    <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
-    >
-      <li>
-        <a id="contacto" href="/#contacto" class="hover:underline"
-          >Contacto</a
+<footer class="relative mt-16 sm:mt-20 md:mt-24 lg:mt-32">
+  {/* Fondo degradado estilo header */}
+  <div class="absolute inset-0 bg-gradient-to-r from-orange-600 via-orange-500 to-red-600">
+    <div class="absolute inset-0 backdrop-blur-sm bg-white/10"></div>
+  </div>
+  
+  <div class="relative w-full mx-auto px-4 sm:px-6 py-5 sm:py-7 max-w-xl md:max-w-2xl lg:max-w-3xl">
+    
+    <div class="flex flex-col items-center gap-4">
+      
+      {/* Redes sociales */}
+      <div class="flex gap-2.5">
+        <a 
+          href="https://github.com/daga3005" 
+          target="_blank"
+          class="p-1.5 rounded-full bg-white/15 backdrop-blur-sm text-white/90 hover:text-white hover:bg-white/25 transition-all duration-300 hover:-translate-y-0.5"
+          aria-label="GitHub"
         >
-      </li>
-    </ul>
+          <GitHub class="size-4.5" />
+        </a>
+        <a 
+          href="https://linkedin.com/in/daniel-alejandro-garc%C3%ADa-p%C3%A9rez-9187a7288" 
+          target="_blank"
+          class="p-1.5 rounded-full bg-white/15 backdrop-blur-sm text-white/90 hover:text-white hover:bg-white/25 transition-all duration-300 hover:-translate-y-0.5"
+          aria-label="LinkedIn"
+        >
+          <LinkedInIcon class="size-4.5" />
+        </a>
+        <a 
+          href="mailto:garcdanielalejandro@gmail.com"
+          class="p-1.5 rounded-full bg-white/15 backdrop-blur-sm text-white/90 hover:text-white hover:bg-white/25 transition-all duration-300 hover:-translate-y-0.5"
+          aria-label="Email"
+        >
+          <MailIcon class="size-4.5" />
+        </a>
+      </div>
+      
+      {/* Copyright */}
+      <div class="text-center text-xs sm:text-sm text-white/80">
+        <span>&copy; {currentYear} </span>
+        <a 
+          href="https://www.linkedin.com/in/daniel-alejandro-garc%C3%ADa-p%C3%A9rez-9187a7288" 
+          target="_blank"
+          class="font-medium text-white hover:text-orange-200 transition-colors"
+        >
+          Daniel Alejandro García Pérez
+        </a>
+        <span class="mx-1.5">•</span>
+        <span class="inline-flex items-center gap-1">
+          Made with <HeartFilled class="size-3 text-red-300 inline animate-pulse" />
+        </span>
+      </div>
+      
+      {/* Back to top */}
+      <button 
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="group inline-flex items-center gap-1.5 text-xs text-white/60 hover:text-white transition-all duration-200"
+      >
+        <svg class="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+        Back to top
+      </button>
+      
+    </div>
   </div>
 </footer>
+
+<style is:global>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1.5px);
+    }
+  }
+  
+  .animate-pulse {
+    animation: float 1.5s ease-in-out infinite;
+  }
+</style>

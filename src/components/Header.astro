@@ -1,46 +1,157 @@
 ---
 const navItems = [
   {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
+    title: "Experience",
+    label: "experience",
+    url: "/#experience",
   },
   {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
+    title: "Projects",
+    label: "projects",
+    url: "/#projects",
   },
   {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
+    title: "About me",
+    label: "about-me",
+    url: "/#about-me",
   },
   {
-    title: "Contacto",
-    label: "contacto",
-    url: "/#contacto",
+    title: "Contact",
+    label: "contact",
+    url: "mailto:garcdanielalejandro@gmail.com",
   },
-]
-
+];
 ---
 
+<header class="fixed top-0 z-50 w-full">
+  
+  <div class="absolute inset-0 bg-gradient-to-r from-orange-400/90 via-orange-500/85 to-red-500/90 shadow-md">
+    <div class="absolute inset-0 backdrop-blur-sm bg-white/5"></div>
+  </div>
+  
+  <nav class="relative flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2 sm:py-3 max-w-7xl mx-auto">
+    
+    
+    <div class="flex items-center">
+      <a href="/" class="text-white font-bold text-lg sm:text-xl lg:text-2xl tracking-tight hover:opacity-85 transition-opacity">
+        <span class="text-orange-100">Mi</span>Portafolio
+      </a>
+    </div>
 
+    
+    <div class="hidden lg:flex gap-x-1 items-center">
+      {
+        navItems.map((link) => (
+          <a
+            class="relative px-4 py-2 text-white/85 hover:text-white font-medium rounded-full transition-all duration-200 hover:bg-white/15 hover:scale-105 text-sm lg:text-base"
+            aria-label={link.label}
+            href={link.url}
+          >
+            {link.title}
+          </a>
+        ))
+      }
+    </div>
 
+   
+    <button 
+      id="mobile-menu-button"
+      class="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-white/15 transition-colors z-20"
+      aria-label="Menú"
+    >
+      <span class="w-6 h-0.5 bg-white rounded-full transition-all duration-300"></span>
+      <span class="w-6 h-0.5 bg-white rounded-full transition-all duration-300"></span>
+      <span class="w-6 h-0.5 bg-white rounded-full transition-all duration-300"></span>
+    </button>
 
-<header  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-4">
-
-    <nav
-    class="header-nav flex gap-x-1 px-4 py-1.5 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300 justify-center items-center border border-transparent"
-  >
-  {
-      navItems.map((link) => (
-        <a
-          class="nav-link relative block px-3 py-1.5 rounded-full transition-colors duration-200 hover:text-yellow-500 dark:hover:text-yellow-400"
-          aria-label={link.label}
-          href={link.url}
-        >
-          {link.title}
-        </a>
-      ))
-    }
+   
+    <div 
+      id="mobile-menu"
+      class="fixed inset-0 bg-gradient-to-br from-orange-400/95 to-red-500/95 backdrop-blur-md z-10 transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+    >
+      <div class="flex flex-col items-center justify-center min-h-screen gap-4 sm:gap-6 p-8">
+        {
+          navItems.map((link) => (
+            <a
+              class="text-white text-xl sm:text-2xl lg:text-3xl font-medium py-3 px-8 rounded-full hover:bg-white/20 transition-all duration-200 hover:scale-110 w-full max-w-xs text-center"
+              aria-label={link.label}
+              href={link.url}
+            >
+              {link.title}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </nav>
 </header>
+
+<script>
+  
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    if (isMenuOpen) {
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+      document.body.style.overflow = 'hidden';
+      
+      const spans = menuButton.querySelectorAll('span');
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+    } else {
+      mobileMenu.classList.remove('translate-x-0');
+      mobileMenu.classList.add('translate-x-full');
+      document.body.style.overflow = '';
+      // Resetear animación
+      const spans = menuButton.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  }
+
+  menuButton?.addEventListener('click', toggleMenu);
+
+  
+  const menuLinks = mobileMenu?.querySelectorAll('a');
+  menuLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      if (isMenuOpen) toggleMenu();
+    });
+  });
+
+  
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (window.innerWidth >= 1024 && isMenuOpen) {
+        toggleMenu();
+      }
+    }, 250);
+  });
+</script>
+
+<style is:global>
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  
+  section, [id] {
+    scroll-margin-top: 80px;
+  }
+  
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    section, [id] {
+      scroll-margin-top: 70px;
+    }
+  }
+</style>

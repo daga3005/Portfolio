@@ -1,11 +1,10 @@
 
 [
   {
-    "date": "Septiembre 2025 - Actualidad",
+    "date": "September 2025 - Present",
     "title": "Web Developer",
-    "company": "Universidad de Cienfuegos \"Carlos Rafael Rodríguez\"",
-    "description": "Desarrollo, actualización y mantenimiento de las plataformas web institucionales. Implementación de interfaces modernas con React, TypeScript y Tailwind CSS. Optimización de rendimiento, seguridad y experiencia de usuario. Integración de servicios y APIs para funcionalidades internas. Resolución de incidencias técnicas y soporte a usuarios y departamentos.",
-    "link": "",
+    "company": "University of Cienfuegos \"Carlos Rafael Rodríguez\"",
+    "description": "I take care of developing, updating, and keeping our institutional web platforms running smoothly. I build modern, user-friendly interfaces using React, TypeScript, and Tailwind CSS — always trying to make things faster, more secure, and easier to use. I also connect different services and APIs to add useful features for internal teams, and help users and departments whenever they run into technical issues.",
     "current": true
   }
 ]

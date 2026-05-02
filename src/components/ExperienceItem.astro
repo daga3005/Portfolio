@@ -15,38 +15,63 @@ const { title, company, description, link, date, current = false } = Astro.props
 ---
 
 <div
-  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
+  class="relative mx-4 sm:mx-8 md:mx-12 pb-8 sm:pb-10 md:pb-12 group transition-all duration-300 hover:bg-orange-50/50 dark:hover:bg-orange-950/10 rounded-xl -mx-2 px-2"
 >
-  <div class="relative pb-12 md:col-span-2">
-    <div class="sticky top-0">
-      <!-- Title row with dot: flex ensures perfect vertical centering -->
-      <div class="flex items-center">
-        <span
-          class="absolute -left-[42px] flex size-[14px] items-center justify-center"
-          aria-hidden="true"
-        >
+  <!-- Línea vertical -->
+  <div class="absolute left-[-28px] sm:left-[-32px] md:left-[-35px] top-0 bottom-0">
+    <div class="h-full w-px bg-gradient-to-b from-orange-200 to-red-200 dark:from-orange-800/50 dark:to-red-800/50"></div>
+  </div>
+  
+  <div class="grid md:grid-cols-5 md:gap-6 lg:gap-8">
+    
+    {/* Columna izquierda */}
+    <div class="relative pb-3 md:pb-0 md:col-span-2">
+      <div class="md:sticky md:top-24 lg:top-28">
+        {/* Marcador */}
+        <div class="absolute left-[-41px] sm:left-[-45px] md:left-[-48px] flex size-[14px] items-center justify-center">
           {current && (
-            <span class="animate-ping motion-reduce:animate-none absolute inline-flex size-full rounded-full bg-yellow-400/40"></span>
+            <span class="animate-ping motion-reduce:animate-none absolute inline-flex size-full rounded-full bg-orange-400/40"></span>
           )}
           <span
-            class={`relative inline-flex size-[10px] rounded-full bg-yellow-400 ${current ? "shadow-[0_0_8px_2px_rgba(251,191,36,0.45)]" : ""}`}
+            class={`relative inline-flex size-[10px] rounded-full ${
+              current 
+                ? "bg-orange-500 ring-2 ring-orange-300/50" 
+                : "bg-orange-400 group-hover:bg-orange-500"
+            } transition-all duration-300 group-hover:scale-125`}
           ></span>
-        </span>
-        <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
+        </div>
+        
+        <h3 class="text-lg sm:text-xl font-bold text-orange-600 dark:text-orange-400">
+          {title}
+        </h3>
+        <h4 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
+          {company}
+        </h4>
+        <time class="block mt-1 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+          {date}
+        </time>
+        {current && (
+          <span class="inline-block mt-2 text-xs font-medium text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950/50 px-2 py-0.5 rounded-full">
+            Present
+          </span>
+        )}
       </div>
-      <h4 class="font-semibold text-xl text-gray-600 dark:text-white">{company}</h4>
-      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
     </div>
-  </div>
-  <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
-    {description}
-    {
-      link && (
-        <LinkInline href={link}>
-          Saber más sobre {company}{" "}
-          <ArrowRight class="size-5" aria-hidden="true" />
-        </LinkInline>
-      )
-    }
+    
+    {/* Columna derecha */}
+    <div class="relative mt-3 md:mt-0 md:col-span-3">
+      <div class="text-gray-600 dark:text-gray-300 space-y-2 text-sm sm:text-base leading-relaxed">
+        {description}
+        {link && (
+          <div class="mt-3">
+            <LinkInline href={link} class="inline-flex items-center gap-1 text-orange-600 dark:text-orange-400 hover:text-orange-700 font-medium text-sm">
+              Saber más sobre {company}
+              <ArrowRight class="size-4 group-hover:translate-x-1 transition-transform" />
+            </LinkInline>
+          </div>
+        )}
+      </div>
+    </div>
+    
   </div>
 </div>

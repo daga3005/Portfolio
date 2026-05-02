@@ -1,68 +1,180 @@
 ---
-const personalImageAlt = "Daniel Alejandro"
-import Badge from "./Badge.astro"
-import CV from "./icons/CV.astro"
-import GitHubIcon from "./icons/GitHub.astro"
-import LinkedInIcon from "./icons/LinkedIn.astro"
-import MailIcon from "./icons/Mail.astro"
-import SparklesIcon from "./icons/Sparkles.astro"
-import SocialPill from "./SocialPill.astro"
+const personalImageAlt = "Daniel Alejandro";
+import Badge from "./Badge.astro";
+import CV from "./icons/CV.astro";
+import GitHubIcon from "./icons/GitHub.astro";
+import LinkedInIcon from "./icons/LinkedIn.astro";
+import MailIcon from "./icons/Mail.astro";
+import SparklesIcon from "./icons/Sparkles.astro";
+import SocialPill from "./SocialPill.astro";
 ---
 
-<div class="max-w-xl">
-  <div class="anim-fade-in flex gap-4 mb-6 items-center">
-    <!-- Avatar with ambient glow -->
-    <div class="relative flex-shrink-0">
+<div class="max-w-3xl mx-auto text-center md:text-left">
+  <!-- Avatar y badge - Centrado en móvil, alineado izquierda en desktop -->
+  <div
+    class="anim-fade-in flex flex-col items-center md:flex-row gap-4 mb-8 md:mb-10"
+  >
+    <div class="relative flex-shrink-0 group">
+      <!-- Glow degradado naranja-rojo -->
       <div
-        class="absolute inset-0 rounded-full bg-yellow-400/30 dark:bg-yellow-400/20 blur-xl scale-125"
+        class="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400/40 to-red-500/40 blur-xl scale-125 group-hover:scale-150 transition-transform duration-500"
         aria-hidden="true"
       >
       </div>
+      <!-- Anillo de gradiente alrededor del avatar -->
+      <div
+        class="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 to-red-500 p-[2px]"
+      >
+        <div
+          class="absolute inset-[2px] rounded-full bg-gray-50 dark:bg-gray-950"
+        >
+        </div>
+      </div>
       <img
-        class="relative rounded-full shadow-2xl size-20 ring-2 ring-yellow-400/60 ring-offset-2 ring-offset-gray-50 dark:ring-offset-gray-950"
+        class="relative rounded-full shadow-2xl size-20 sm:size-24 md:size-28 object-cover"
         src="/me.png"
         alt={personalImageAlt}
       />
     </div>
+
     <a
       href="https://linkedin.com/in/daniel-alejandro-garcía-pérez-9187a7288"
       target="_blank"
       rel="noopener noreferrer"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge><SparklesIcon class="size-3" /> Disponible para trabajar</Badge>
+      <Badge
+        class="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950/30 dark:to-red-950/30 border-orange-200 dark:border-orange-800"
+      >
+        <SparklesIcon class="size-3 text-orange-500" />
+        <span class="text-orange-700 dark:text-orange-300"
+          >Available for new opportunities</span
+        >
+      </Badge>
     </a>
   </div>
 
+  <!-- Título principal -->
   <h1
-    class="anim-fade-in anim-delay-1 text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+    class="anim-fade-in anim-delay-1 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
   >
-    Hey, soy <span class="gradient-name">Daniel Alejandro García Pérez</span>
+    <span class="text-gray-700 dark:text-gray-200">Hey, I'm</span>
+    <span
+      class="block sm:inline bg-gradient-to-r from-orange-500 via-orange-600 to-red-600 bg-clip-text text-transparent"
+    >
+      Daniel Alejandro García Pérez
+    </span>
   </h1>
 
+  <!-- Descripción -->
   <p
-    class="anim-fade-in anim-delay-2 mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    class="anim-fade-in anim-delay-2 mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto md:mx-0"
   >
-     <strong
-      >Ingeniero en Telecomunicaciones y Electrónica, full‑stack web development</strong
-    > de Cienfuegos, Cuba. Especializado en la creación de aplicaciones web modernas y escalables.
+    <strong
+      class="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent font-semibold"
+    >
+      I'm a Telecommunications and Electronic Engineer and full‑stack web developer
+    </strong>
+   from Cienfuegos, Cuba. I specialize in building modern, scalable web applications.
   </p>
 
+  <!-- Enlaces sociales -->
   <nav
-    class="anim-fade-in anim-delay-3 flex flex-wrap gap-4 mt-8"
+    class="anim-fade-in anim-delay-3 flex flex-wrap gap-3 sm:gap-4 mt-8 sm:mt-10 justify-center md:justify-start"
     aria-label="Redes sociales y contacto"
   >
-    <SocialPill href="https://onedrive.live.com/?cid=0bef78277e5ef19a&id=0BEF78277E5EF19A%21sd127afdf44184280b19f8803d7f9696e&resid=0BEF78277E5EF19A%21sd127afdf44184280b19f8803d7f9696e&ithint=file%2Cpdf&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy8wYmVmNzgyNzdlNWVmMTlhL0lRRGZyeWZSR0VTQVFyR2ZpQVBYLVdsdUFhWWxyOEF5TXVlQUZsV1JMa2pwUkw4&v=validatepermission">
-      <CV class="w-6 h-6 text-yellow-500"/>
-      CV
+    <SocialPill
+      href="https://onedrive.live.com/?cid=0bef78277e5ef19a&id=0BEF78277E5EF19A%21sd127afdf44184280b19f8803d7f9696e&resid=0BEF78277E5EF19A%21sd127afdf44184280b19f8803d7f9696e&ithint=file%2Cpdf&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy8wYmVmNzgyNzdlNWVmMTlhL0lRRGZyeWZSR0VTQVFyR2ZpQVBYLVdsdUFhWWxyOEF5TXVlQUZsV1JMa2pwUkw4&v=validatepermission"
+      class="group bg-gradient-to-r from-orange-500 to-red-500 hover:shadow-lg hover:shadow-orange-500/25 transition-all duration-300"
+    >
+      <CV
+        class="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white group-hover:scale-110 transition-transform"
+      />
+      <span class="text-white text-sm sm:text-base font-medium"
+        >Curriculum Vitae</span
+      >
     </SocialPill>
-    <SocialPill href="https://linkedin.com/in/daniel-alejandro-garcía-pérez-9187a7288">
-      <LinkedInIcon class="size-4" />
-      LinkedIn
+
+    <SocialPill
+      href="https://linkedin.com/in/daniel-alejandro-garcía-pérez-9187a7288"
+      class="group border border-orange-500/40 hover:border-orange-500 hover:bg-orange-50 dark:hover:bg-orange-950/30 transition-all duration-300"
+    >
+      <LinkedInIcon
+        class="size-3.5 sm:size-4 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform"
+      />
+      <span
+        class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-medium"
+        >LinkedIn</span
+      >
     </SocialPill>
-    <SocialPill href="https://github.com/daga3005">
-      <GitHubIcon class="size-4" />
-      GitHub
+
+    <SocialPill
+      href="https://github.com/daga3005"
+      class="group border border-orange-500/40 hover:border-orange-500 hover:bg-orange-50 dark:hover:bg-orange-950/30 transition-all duration-300"
+    >
+      <GitHubIcon
+        class="size-3.5 sm:size-4 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform"
+      />
+      <span
+        class="text-gray-700 dark:text-gray-200 text-sm sm:text-base font-medium"
+        >GitHub</span
+      >
+    </SocialPill>
+
+    <SocialPill
+      href="mailto:garcdanielalejandro@gmail.com"
+      class="bg-orange-50 dark:bg-orange-950/30 border border-orange-200 dark:border-orange-800 text-orange-700 dark:text-orange-300 hover:bg-orange-100 dark:hover:bg-orange-950/50 hover:border-orange-300 dark:hover:border-orange-700"
+      title="Send Email"
+    >
+      <MailIcon
+        class="size-3.5 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform"
+      />
+      <span>Email</span>
     </SocialPill>
   </nav>
 </div>
+
+<style is:global>
+  .anim-fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .anim-delay-1 {
+    animation-delay: 0.1s;
+  }
+
+  .anim-delay-2 {
+    animation-delay: 0.3s;
+  }
+
+  .anim-delay-3 {
+    animation-delay: 0.5s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Efecto de brillo sutil en hover del avatar */
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .group:hover .absolute.inset-0.rounded-full {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+</style>

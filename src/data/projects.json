@@ -1,41 +1,33 @@
 [
   {
     "title": "Digital Ecosystem",
-    "description": "Sitio Web sobre el Ecosistema Digital en la Formación Continua de Docentes",
+    "description": "Website about the Digital Ecosystem in Continuous Teacher Training",
     "link": "https://digital-ecosystem.vercel.app/",
     "github": "https://github.com/daga3005/digital-ecosystem",
-    "image": "/projects/dig-eco.png",
     "tags": ["NEXT", "TAILWIND"]
   },
   {
-    "title": "World Explorer 🌍",
-    "description": "Aplicación profesional construida con React + TypeScript + TailwindCSS que permite explorar información de todos los países del mundo usando la API de REST Countries.",
-    "image": "/projects/world-country.webp",
+    "title": "World Explorer",
+    "description": "Professional application built with React + TypeScript + TailwindCSS that allows you to explore information about all countries in the world using the REST Countries API.",
     "github": "https://github.com/daga3005/World-Explorer",
     "tags": ["REACT", "TAILWIND", "TYPESCRIPT"]
   },
   {
-    "title": "🖼️ MAC Museum",
-    "description": "Sitio web interactivo inspirado en un Museo de Arte Contemporáneo, diseñado para ofrecer una experiencia visual dinámica utilizando GSAP y Chakra UI.",
+    "title": "MAC Museum",
+    "description": "Interactive website inspired by a Contemporary Art Museum, designed to offer a dynamic visual experience using GSAP and Chakra UI.",
     "github": "https://github.com/daga3005/MAC-Museum",
-    "image": "/projects/museo.png",
-    
-    "tags": ["REACT","TYPESCRIPT","CHAKRA"]
+    "tags": ["REACT", "TYPESCRIPT", "CHAKRA"]
   },
   {
-    "title": " Books-Rest-API",
-    "description": "Una API REST construida con Node.js y Express que implementa autenticación mediante JWT y manejo de sesiones con cookies. El proyecto usa PostgreSQL como base de datos y EJS como motor de plantillas.",
+    "title": "Books REST API",
+    "description": "A REST API built with Node.js and Express that implements JWT authentication and cookie-based session management. The project uses PostgreSQL as the database and EJS as the template engine.",
     "github": "https://github.com/daga3005/Books-Auth-Rest-API",
-    "image": "/projects/four.png",
-    
-    "tags": ["NODE","EXPRESS","POSTGRES"]
+    "tags": ["NODE", "EXPRESS", "POSTGRES"]
   },
   {
-    "title": "🎬 Movies REST API",
-    "description": "API RESTful para gestión de películas construida con Node.js y Express. Soporta dos modos de almacenamiento: archivo local (JSON) o base de datos MySQL.",
+    "title": "Movies REST API",
+    "description": "RESTful API for movie management built with Node.js and Express. Supports two storage modes: local file (JSON) or MySQL database.",
     "github": "https://github.com/daga3005/movies-rest-api",
-    "image": "/projects/movies-rest.jpg",
-    
-    "tags": ["NODE","EXPRESS","MYSQL"]
+    "tags": ["NODE", "EXPRESS", "MYSQL"]
   }
 ]

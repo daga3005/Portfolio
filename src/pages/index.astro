@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import Welcome from "../components/Welcome.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Experience from "../components/Experience.astro";
 import Briefcase from "../components/icons/Briefcase.astro";
@@ -9,8 +8,7 @@ import CodeDots from "../components/icons/CodeDots.astro";
 import Projects from "../components/Projects.astro";
 import AboutMe from "../components/AboutMe.astro";
 import UserHeart from "../components/icons/UserHeart.astro";
-import Contacto from "../components/Contacto.astro";
-import Contact from "../components/icons/Contact.astro";
+
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -22,36 +20,36 @@ import Contact from "../components/icons/Contact.astro";
  Ingeniero en Telecomunicaciones y Desarrollador Full Stack.
  Especializado en crear aplicaciones escalables con experiencia de usuario excepcional.`
 >
-	<SectionContainer class="py-16 md:py-36">
+	<SectionContainer class="py-12 sm:py-20 md:py-28 lg:py-36">
 		<Hero />
 	</SectionContainer>
-	<div class="space-y-24">
-		<SectionContainer id="experiencia">
-			<Briefcase class="size-8" />
-			Experiencia laboral
 
+	<div class="space-y-16 sm:space-y-20 md:space-y-24 lg:space-y-32">
+		<SectionContainer
+			id="experience"
+			title="Work Experience"
+			icon={Briefcase}
+			class="py-8 md:py-12"
+		>
 			<Experience />
 		</SectionContainer>
 
-		<SectionContainer id="proyectos">
-      
-        <CodeDots class="size-7" />
-        Proyectos
-      <Projects />
-    </SectionContainer>
+		<SectionContainer
+			id="projects"
+			title="Projects"
+			icon={CodeDots}
+			class="py-8 md:py-12"
+		>
+			<Projects />
+		</SectionContainer>
 
-	<SectionContainer id="contacto">
-      <Contact class="w-6 h-6 text-yellow-500"/>
-        Contacto
-      <Contacto />
-    </SectionContainer>
-
-	<SectionContainer id="sobre-mi">
-      
-        <UserHeart class="size-8" />
-        Sobre mí
-     
-      <AboutMe />
-    </SectionContainer>
+		<SectionContainer
+			id="about-me"
+			title="About me"
+			icon={UserHeart}
+			class="py-8 md:py-12"
+		>
+			<AboutMe />
+		</SectionContainer>
 	</div>
 </Layout>
