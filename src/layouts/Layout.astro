@@ -27,24 +27,28 @@ const { description, title } = Astro.props;
     
   </head>
 
-  <body class="relative text-black dark:text-white">
+  <body class="relative text-gray-900 dark:text-gray-100">
+    <!-- Fondo degradado principal -->
     <div
-      class="fixed inset-0 z-[-2] bg-gray-50 dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(251,191,36,0.14),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(251,191,36,0.08),rgba(0,0,0,0))]"
-    >
-    </div>
-    <!-- Grain texture overlay for tactile depth -->
+      class="fixed inset-0 z-[-3] bg-gradient-to-br from-orange-50/50 via-white to-red-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950"
+    ></div>
+    
+    <!-- Efecto de glow radial - naranja/rojo -->
     <div
-      class="pointer-events-none fixed inset-0 z-[-1] opacity-[0.035] dark:opacity-[0.05]"
-      style="background-image: url('/noise.svg'); background-size: 200px 200px;"
-      aria-hidden="true"
-    >
-    </div>
+      class="fixed inset-0 z-[-2] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.12),rgba(239,68,68,0.04))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(249,115,22,0.06),rgba(0,0,0,0))] pointer-events-none"
+    ></div>
+    
+    <!-- Textura de grano con SVG inline -->
+    <div
+      class="pointer-events-none fixed inset-0 z-[-1] opacity-[0.04] dark:opacity-[0.03] mix-blend-multiply dark:mix-blend-screen"
+      style="background-image: url(\)"
+    ></div>
+    
     <Header />
-    <slot />
-	<Footer/>
-	
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
     
     <style is:global>
       :root {
@@ -52,16 +56,56 @@ const { description, title } = Astro.props;
       }
 
       html {
-        font-family: "Onest Variable", system-ui, sans-serif;
+        font-family: "Onest Variable", system-ui, -apple-system, sans-serif;
         scroll-behavior: smooth;
       }
 
       body {
-        color: rgba(17, 17, 17, 0.9);
         display: flex;
         flex-direction: column;
         min-height: 100vh;
         overscroll-behavior: none;
+        line-height: 1.6;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Mejora de selección de texto */
+      ::selection {
+        background-color: rgba(249, 115, 22, 0.25);
+        color: inherit;
+      }
+      
+      ::-moz-selection {
+        background-color: rgba(249, 115, 22, 0.25);
+        color: inherit;
+      }
+
+      /* Scrollbar personalizada */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #f97316, #ef4444);
+        border-radius: 4px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #ea580c, #dc2626);
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        ::-webkit-scrollbar-track {
+          background: #1a1a1a;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -70,98 +114,111 @@ const { description, title } = Astro.props;
         }
       }
 
-      @media (prefers-color-scheme: dark) {
-        body {
-          color: rgba(255, 255, 255, 0.9);
-        }
+      /* Focus styles para accesibilidad */
+      :focus-visible {
+        outline: 2px solid #f97316;
+        outline-offset: 3px;
+        border-radius: 6px;
       }
 
-      @keyframes blur {
-        to {
-          backdrop-filter: blur(20px);
-          border-width: 1px;
-          border-color: rgba(0, 0, 0);
-          padding: 0.25rem 0.75rem;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          background-color: rgb(229, 229, 229);
-          border-radius: 9999px;
-        }
-      }
-
-      @media (prefers-color-scheme: dark) {
-        @keyframes blur {
-          from {
-            border: 0px;
-          }
-          to {
-            box-shadow:
-              0px 5px 50px -5px rgba(0, 0, 0, 0.1),
-              0px 0px 0 1px rgba(0, 0, 0, 0.3);
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(20px);
-            border-width: 1px;
-            border-color: rgba(0, 0, 0);
-            padding-left: 0.75rem;
-            padding-right: 0.75rem;
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 9999px;
-          }
-        }
-      }
-
-      /* ── Design system: staggered entrance animations ─────────────── */
+      /* Animaciones mejoradas */
       @keyframes fade-in-up {
         from {
           opacity: 0;
-          translate: 0 20px;
+          transform: translateY(24px);
         }
         to {
           opacity: 1;
-          translate: 0 0;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes scale-in {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
         }
       }
 
       .anim-fade-in {
-        animation: fade-in-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation: fade-in-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
       }
-      .anim-delay-1 { animation-delay: 120ms; }
-      .anim-delay-2 { animation-delay: 260ms; }
-      .anim-delay-3 { animation-delay: 400ms; }
-      .anim-delay-4 { animation-delay: 540ms; }
+      
+      .anim-fade {
+        animation: fade-in 0.5s ease forwards;
+      }
+      
+      .anim-scale {
+        animation: scale-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      
+      .anim-delay-1 { animation-delay: 0.1s; }
+      .anim-delay-2 { animation-delay: 0.2s; }
+      .anim-delay-3 { animation-delay: 0.3s; }
+      .anim-delay-4 { animation-delay: 0.4s; }
+      .anim-delay-5 { animation-delay: 0.5s; }
+      .anim-delay-6 { animation-delay: 0.6s; }
 
-      /* Gradient text utility for the hero name */
+      /* Gradient text - naranja/rojo */
       .gradient-name {
-        background: linear-gradient(135deg, #f59e0b 10%, #f97316 90%);
+        background: linear-gradient(135deg, #f59e0b 0%, #f97316 40%, #ef4444 80%, #dc2626 100%);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-clip: text;
         color: transparent;
       }
 
-      /* Scroll-triggered reveal for named sections (below the fold) */
+      /* Scroll-triggered reveal */
       @supports (animation-timeline: view()) {
         [data-section] {
-          animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+          animation: fade-in-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
           animation-timeline: view();
-          animation-range: entry 0% entry 18%;
+          animation-range: entry 0% entry 20%;
         }
       }
 
+      /* Smooth transitions para modo oscuro */
+      * {
+        transition-property: background-color, border-color, color, fill, stroke, opacity, transform;
+        transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+        transition-duration: 200ms;
+      }
+
       @media (prefers-reduced-motion: reduce) {
+        * {
+          transition-duration: 0s !important;
+          animation-duration: 0s !important;
+        }
+        
         .anim-fade-in,
         [data-section] {
           animation: none !important;
           opacity: 1 !important;
-          translate: none !important;
+          transform: none !important;
         }
+      }
+
+      /* Utilidades de card hover */
+      .card-hover {
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      
+      .card-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -12px rgba(249, 115, 22, 0.15);
       }
     </style>
   </body>
-</html>
