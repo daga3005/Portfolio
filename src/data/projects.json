@@ -25,9 +25,9 @@
     "tags": ["NODE", "EXPRESS", "POSTGRES"]
   },
   {
-    "title": "Movies REST API",
-    "description": "RESTful API for movie management built with Node.js and Express. Supports two storage modes: local file (JSON) or MySQL database.",
-    "github": "https://github.com/daga3005/movies-rest-api",
+    "title": "FAST FOOD REST API",
+    "description": "RESTful API for FAST FOOD management built with Node.js and Express that implements JWT authentication and cookie-based session management. The project uses MySQL as the database.",
+    "github": "https://github.com/daga3005/Rapid-Food-REST-API",
     "tags": ["NODE", "EXPRESS", "MYSQL"]
   }
 ]
